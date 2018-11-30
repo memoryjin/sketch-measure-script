@@ -25,11 +25,12 @@ async function build () {
     colorMap[curColorValue] = curColorName
     return colorMap
   }, {})
-  fs.writeFileSync('./src/result.json', JSON.stringify(output))
+
+  fs.writeFileSync('./src/result.json', JSON.stringify(output, null, 2))
 
   const bundle = await rollup.rollup(inputOptions)
 
   bundle.write(outputOptions)
 }
- 
+
 build()
