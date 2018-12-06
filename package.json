@@ -5,6 +5,9 @@
   "repository": "git@gitlab.alibaba-inc.com:changsong.jcs/sketch-script.git",
   "author": "弎秋 <changsong.jcs@alibaba-inc.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "node build.js"
+  },
   "dependencies": {
     "node-sass": "^4.10.0",
     "rollup": "^0.67.3",
