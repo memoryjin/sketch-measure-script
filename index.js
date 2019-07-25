@@ -50,7 +50,7 @@ var convertColorToVariable = (function () {
 
   function convertColorToVariable(str) {
     return str.split(' ').map(item => {
-      if (item.startWith('#')) {
+      if (item.startsWith('#')) {
         return getColorName(item)
       }
 
