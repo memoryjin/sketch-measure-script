@@ -10,11 +10,20 @@ function getColorName (value) {
 }
 
 export default function convertColorToVariable(str) {
-  return str.split(' ').map(item => {
-    if (item.startsWith('#')) {
-      return getColorName(item)
-    }
+  let rowList = str.split(';').filter(row => row)
 
-    return item
-  }).join(' ')
+  rowList = rowList.map((row) => {
+    let [label, value] = row.split(':')
+    value = value
+      .split(' ')
+      .map(item => {
+        item = item.trim()
+        return item.startsWith('#') ? getColorName(item) : item
+      })
+      .join(' ')
+
+    return `${label}: ${value}`
+  })
+
+  return rowList.join(';')
 }
