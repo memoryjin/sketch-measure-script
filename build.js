@@ -11,7 +11,7 @@ const inputOptions = {
 const outputOptions = {
   file: 'index.js',
   format: 'iife',
-  name: 'getColorName'
+  name: 'convertColorToVariable'
 }
 
 async function build () {
@@ -22,7 +22,11 @@ async function build () {
   const { global } = result.vars
   const output = Object.keys(global).reduce((colorMap, curColorName) => {
     const curColorValue = global[curColorName].value.hex
-    colorMap[curColorValue] = curColorName
+    if (colorMap[curColorValue]) {
+      colorMap[curColorValue] += `、${curColorName}`
+    } else {
+      colorMap[curColorValue] = curColorName
+    }
     return colorMap
   }, {})
 

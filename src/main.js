@@ -1,10 +1,20 @@
 import variables from './result.json'
 
-export default function getColorName (value) {
-  value = (value.split(' ')[0] || '').toLowerCase()
-  // 将#333 -> #333333
-  if (value.length === 4) {
-      value = value + value.slice(1)
+function getColorName (value) {
+  let colorValue = value.toLowerCase()
+  if (colorValue.length === 4) {
+    colorValue += colorValue.slice(1)
   }
-  return variables[value] || value
+
+  return variables[colorValue] ? `${value}(${variables[colorValue]})` : value
+}
+
+export default function convertColorToVariable(str) {
+  return str.split(' ').map(item => {
+    if (item.startWith('#')) {
+      return getColorName(item)
+    }
+
+    return item
+  }).join(' ')
 }
