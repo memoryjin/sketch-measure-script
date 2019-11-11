@@ -2,10 +2,9 @@ var convertColorToVariable = (function () {
   'use strict';
 
   var variables = {
-  	"#fff900": "$color-brand1-1、$color-data1-1、$color-data1-2、$color-data1-3、$color-data1-4、$color-data1-5、$color-data1-6、$color-data1-7、$color-data1-8、$color-other-1、$color-other-2、$color-other-3",
+  	"#ffffff": "$color-brand1-1、$color-data1-1、$color-data1-2、$color-data1-3、$color-data1-4、$color-data1-5、$color-data1-6、$color-data1-7、$color-data1-8、$color-white、$color-other-1、$color-other-2、$color-other-3、$color-fill1-1、$color-text1-7、$color-line1-5",
   	"#0055ff": "$color-brand1-6、$color-notice-2、$color-help-2、$color-link-1",
   	"#334d80": "$color-brand1-9",
-  	"#ffffff": "$color-white、$color-fill1-1、$color-text1-7、$color-line1-5",
   	"#000000": "$color-black、$color-transparent",
   	"#d8fff2": "$color-success-1",
   	"#14cc8f": "$color-success-2",
@@ -36,7 +35,10 @@ var convertColorToVariable = (function () {
   	"#293d66": "$color-text1-6",
   	"#142f66": "$color-brand1-10",
   	"#d9e1f1": "$color-fill1-5",
-  	"#f0f2f5": "$color-fill1-7"
+  	"#f0f2f5": "$color-fill1-7",
+  	"#f5f6fa": "$color-fill1-8",
+  	"#ff8f00": "$color-warning-6",
+  	"#ffeed9": "$color-warning-5"
   };
 
   function getColorName (value) {
